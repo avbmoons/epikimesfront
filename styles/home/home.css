@@ -209,10 +209,39 @@ body {
   display: flex;
   justify-content: center;
   box-sizing: border-box;
+  position: relative;
 }
 .wrapper .top main .collage-block .collage-img {
   margin: 0 auto;
   height: 100%;
+  transition: filter 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.wrapper .top main .collage-block .collage-link {
+  margin: auto;
+  width: 83%;
+  text-decoration: none;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: auto;
+  letter-spacing: 0;
+  color: #F9E352;
+  position: absolute;
+  top: 48%;
+  opacity: 0;
+}
+.wrapper .top main .collage-block .collage-link:hover {
+  color: #EF9C33;
+}
+.wrapper .top main .collage-block:hover .collage-link {
+  opacity: 1;
+}
+.wrapper .top main .collage-block:hover .collage-img {
+  filter: brightness(50%);
 }
 .wrapper .top main .news-block {
   margin: 0 auto;
@@ -243,7 +272,7 @@ body {
 }
 .wrapper .top main .news-block .new-images-block {
   margin: 60px auto;
-  width: 100%;
+  width: 83%;
   height: auto;
   display: flex;
   justify-content: center;

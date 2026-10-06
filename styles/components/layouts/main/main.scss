@@ -1,4 +1,4 @@
-@use "../vars/vars.scss" as *;
+@use "../../../vars/vars.scss" as *;
 
 * {
   margin: 0;
@@ -31,7 +31,6 @@ body {
       background-color: $color-white;
       position: sticky;
       top: 0;
-      //left: 0;
       z-index: 9999;
       .header-block {
         margin: 0 auto;
@@ -68,11 +67,11 @@ body {
           @include flex-vertical();
           .menu-block {
             margin: 0 auto;
-            width: 100%;  // auto;
+            width: 100%;  
             @include flex-horizontal();
             //justify-content: space-around;
             .menu-item {
-              margin: 0;  // auto;
+              margin: 0;  
               margin-right: 50px;
               @include text-font(28px, 400, auto, 0);
               text-decoration: none;
@@ -95,7 +94,7 @@ body {
           @include flex-vertical();
           .service-block {
             margin: 0 auto;
-            width: 100%;  // auto;            
+            width: 100%;              
             @include flex-horizontal();
             justify-content: flex-end;            
             .service-item {
@@ -129,7 +128,6 @@ body {
         height: 25vh;
         //border: 1px solid blue;
         @include flex-horizontal();
-        justify-content: space-between;
         .title-link-block {
           margin: auto;
           margin-top: 60px;
@@ -154,55 +152,6 @@ body {
             color: $color-grey-dark;
           }
         }
-        .search-block {
-          margin: 0 auto;
-          //margin-bottom: 40px;
-          width: $header-center-width;
-          height: 100%;
-          @include flex-horizontal();
-          //justify-content: flex-end;
-          .input-search {
-            margin: auto 0;
-            width: 80%;
-            height: 48px; // 50px;
-            //border: 1px solid $color-back-2;
-            border-left: 1px solid $color-back-2;
-            border-top: 1px solid $color-back-2;
-            border-bottom: 1px solid $color-back-2;
-            border-right: none;
-            //border-radius: 5px;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-            outline: none;
-            line-height: normal;
-          }
-          .input-search::placeholder {
-            padding-left: 10px;
-            @include text-font(14px, 300, auto, 0);
-            color: $color-grey-light;
-          }
-          .btn-search {
-            margin: auto 0;
-            width: 20%;
-            height: 50px;
-            border-left: none;
-            border-right: 1px solid $color-back-2;
-            border-top: 1px solid $color-back-2;
-            border-bottom: 1px solid $color-back-2;
-            //border-radius: 5px;
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
-            outline: none;
-            background: none;
-            cursor: pointer;
-            line-height: normal;
-          }
-          .btn-search:hover {
-            svg path {
-              stroke: $color-red;
-            }
-          }
-        }
         .resource-link-block {
           margin: auto;
           margin-top: 60px;
@@ -218,173 +167,67 @@ body {
           }
         }
       }
-      // .search-block {
-      //   margin: 0 auto;
-      //   margin-bottom: 40px;
-      //   width: $block-width;
-      //   height: fit-content;
-      //   @include flex-horizontal();
-      //   justify-content: flex-end;
-      //   .input-search {
-      //     margin: auto 0;
-      //     width: 40%;
-      //     height: 50px;
-      //     //border: 1px solid $color-back-2;
-      //     border-left: 1px solid $color-back-2;
-      //     border-top: 1px solid $color-back-2;
-      //     border-bottom: 1px solid $color-back-2;
-      //     border-right: none;
-      //     //border-radius: 5px;
-      //     border-top-left-radius: 5px;
-      //     border-bottom-left-radius: 5px;
-      //     outline: none;
-      //   }
-      //   .input-search::placeholder {
-      //     padding-left: 10px;
-      //     @include text-font(14px, 300, auto, 0);
-      //     color: $color-grey-light;
-      //   }
-      //   .btn-search {
-      //     margin: auto 0;
-      //     width: 10%;
-      //     height: 50px;
-      //     border-left: none;
-      //     border-right: 1px solid $color-back-2;
-      //     border-top: 1px solid $color-back-2;
-      //     border-bottom: 1px solid $color-back-2;
-      //     //border-radius: 5px;
-      //     border-top-right-radius: 5px;
-      //     border-bottom-right-radius: 5px;
-      //     outline: none;
-      //     background: none;
-      //     cursor: pointer;
-      //   }
-      //   .btn-search:hover {
-      //     svg path {
-      //       stroke: $color-red;
-      //     }
-      //   }
-      // }
-      .catalog-block {
+      .collage-block {
         margin: 0 auto;
-        margin-bottom: 60px;
-        width: 0.83*$block-width;
-        height: auto;
+        width: $block-width;
+        height: 50vh;
+        //border: 1px solid blueviolet;
         @include flex-horizontal();
-        justify-content: flex-start;  // space-between;
-        flex-wrap: wrap;
-        .item-link {
-          text-decoration: none;
+        .collage-img {
+          margin: 0 auto;
+          //width: 83%;
+          height: 100%; // auto; // 100%;
         }
-        .catalog-item {
-          margin: 10px auto;
-          margin-left: 0;
-          margin-right: 1.8%;
-          width: 23%;
-          height: 48vh; // 40vh;
-          border: 1px solid $color-back-2;
-          border-radius: 5px;
-          background-color: $color-back-2;
-          .item-img-block {
-            margin: 0 auto;
-            width: 100%;
-            height: 75%;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-            @include flex-vertical();
-            .item-img {
-              margin: auto;
-              width: 90%;
-              height: 90%;
-              object-fit: contain;
-            }
+      }
+      .news-block {
+        margin: 0 auto;
+        margin-bottom: 80px;  // 100px;
+        width: $block-width;
+        height: auto;
+        min-height: 15vh;
+        //border: 1px solid violet;
+        @include flex-vertical();
+        .title-link-block {
+          margin: 0 auto;
+          margin-top: 40px;
+          width: 100%;  // $header-left-width;
+          .title-link {
+            @include text-font(30px, 400, auto, 0);
+            color: $color-brown;
+            text-decoration: none;
           }
-          .item-txt-block {
-            margin: 0 auto;
-            width: 100%;
-            height: 25%;
-            background-color: $color-white;
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-            @include flex-horizontal();
-            justify-content: space-between;
-            .txt-left-block {
-              margin: 0 auto;
-              padding: 5px;
-              width: 60%;
-              height: 100%;
-              @include flex-vertical();
-              justify-content: space-between;
-              .item-title {
-                margin: 0 auto;
-                width: 100%;
-                @include text-font(16px, 400, auto, 0);
-                color: $color-grey-dark;
-                text-align: left;
-              }              
-              .item-series {
-                margin: 0 auto;
-                width: 100%;
-                @include text-font(12px, 400, auto, 0);
-                color: $color-grey-dark;
-                text-align: left;
-              } 
-              .item-like-block {
-                margin: 0 auto;
-                width: 100%;
-                height: fit-content;
-                @include flex-horizontal();
-                justify-content: flex-start;
-                .item-like {
-                  padding-left: 10px;
-                  @include flex-vertical();
-                  align-content: center;
-                }
-                .item-like-score {
-                  margin-left: 20px;
-                  @include text-font(14px, 400, auto, 0);
-                  color: $color-grey-dark;
-                  @include flex-vertical();
-                  align-content: center;
-                }
-                .item-like:hover {
-                  svg {
-                    fill: $color-yellow;
-                    path {
-                      stroke: $color-yellow;
-                    }
-                  }
-                }
-              }
-            }
-            .txt-right-block {
-              margin: 0 auto;
-              padding: 5px;
-              width: 40%;
-              height: 100%;
-              @include flex-vertical();
-              justify-content: space-between;
-              .item-txt {
-                margin: 0 auto;
-                width: 100%;
-                @include text-font(12px, 400, auto, 0);
-                color: $color-grey-dark;
-                text-align: right;
-              }
-            }
-
-          }
-        }
-        .catalog-item:hover {
-          background-color: $color-back-3;
-          .item-txt-block {
-            background-color: $color-back-1;
-          }
-          .item-txt-block .txt-left-block .item-title {
+          .title-link:hover {
             color: $color-red;
-          }          
+          }
         }
-        
+        .new-images-block {
+          margin: 60px auto;
+          width: 83%; //100%;
+          height: auto;
+          @include flex-horizontal();
+          justify-content: space-between;
+          .new-image-card {
+            margin: auto;
+            height: 40vh; // 35vh;
+            width: 23%;
+            border: 1px solid $color-back-2;
+            @include flex-vertical();
+            box-shadow: -2px -4px 4px rgba(69, 59, 58, 0.15),
+                        2px 0 4px rgba(69, 59, 58, 0.15);
+            .new-image-card-block {
+              margin: 0 auto;
+              width: 87%;
+              height: 87%;
+              //border: 1px solid black;
+              @include flex-vertical();
+              .image-item {
+                width: 100%;  
+                height: 100%; 
+                object-fit: contain;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -397,8 +240,8 @@ body {
     position: relative;
     .btn-up-block {
       position: absolute;
-      top: -100%; // 73vh; //  -50%;
-      left: 93vw; // 93vw;  // 90%;
+      top: -100%; 
+      left: 93vw; 
       z-index: 9999;
     }
     .btn-up-block:hover {
@@ -497,14 +340,14 @@ body {
         .footer-right-block {
           margin: 0 auto;
           width: 100%;
-          height: 70%;  // fit-content;
+          height: 70%;  
           @include flex-horizontal();
-          justify-content: space-around;  // flex-end;  // space-between;
+          justify-content: space-around;  
           .socials-block {
             margin: 0 auto;
-            width: 70%; // fit-content;
+            width: 70%; 
             @include flex-horizontal();
-            justify-content: flex-end;  // space-between;
+            justify-content: flex-end;  
             .social-icon {
               width: 36px;
               height: 36px;
@@ -517,13 +360,13 @@ body {
           }
           .signature-block {
             margin: 0 auto;
-            width: 30%; // fit-content;
+            width: 30%; 
             height: 100%;
             @include flex-horizontal();
             justify-content: flex-end;
             .signature {
-              width: auto;  // 100%;
-              height: 100%; // 8vh;  // 100%;
+              width: auto;  
+              height: 100%; 
               object-fit: contain;
               @include flex-horizontal();
               justify-content: left;

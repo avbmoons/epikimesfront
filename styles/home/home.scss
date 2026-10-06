@@ -175,10 +175,36 @@ body {
         height: 50vh;
         //border: 1px solid blueviolet;
         @include flex-horizontal();
+        position: relative;
         .collage-img {
           margin: 0 auto;
           //width: 83%;
           height: 100%; // auto; // 100%;
+          transition: filter 0.3s ease;
+          @include flex-vertical();          
+        }
+        .collage-link {
+          margin: auto;
+          width: 83%;
+          text-decoration: none;
+          text-align: center;
+          @include text-font(26px, 500, auto, 0);
+          color: $color-yellow;
+          position: absolute;
+          top: 48%;
+          //display: none;
+          opacity: 0;
+        }
+        .collage-link:hover {
+          color: $color-orange;
+        }
+      }
+      .collage-block:hover {
+        .collage-link {
+          opacity: 1;
+        }
+        .collage-img {
+          filter: brightness(50%);
         }
       }
       .news-block {
@@ -204,7 +230,7 @@ body {
         }
         .new-images-block {
           margin: 60px auto;
-          width: 100%;
+          width: 83%; //100%;
           height: auto;
           @include flex-horizontal();
           justify-content: space-between;

@@ -16,9 +16,11 @@ $footer-center-width: 50%;
 $footer-left-width: 25%;
 $footer-right-width: 25%;
 $footer-height: 15vh;
+$footer-height-admin: 8vh;
 
 $main-width: $block-width;
 $min-main-height: 100vh - $header-height - $footer-height;
+//$min-main-height-admin: 100vh - $header-height-admin - $footer-height-admin;
 
 $color-back-1: #f7f3ef; //rgb(247, 243, 239)
 $color-back-2: #d2d0cf; //rgb(210, 208, 207)

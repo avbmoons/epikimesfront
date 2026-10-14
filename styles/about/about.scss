@@ -1,0 +1,357 @@
+@use "../vars/vars.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto;
+}
+
+.wrapper {
+  margin: 0;
+  width: $site-width;
+  height: auto;
+  @include flex-vertical();
+  justify-content: space-between;
+  .top {
+    margin: 0;
+    width: $site-width;
+    height: auto;
+    @include flex-vertical();
+    justify-content: space-between;
+    flex-grow: 1;
+    header {
+      margin: 0;
+      width: $header-width;
+      height: $header-height;
+      @include flex-vertical();
+      //border: 1px solid red;
+      background-color: $color-white;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      .header-block {
+        margin: 0 auto;
+        width: $block-width;
+        height: $header-height;
+        //background-color: yellow;
+        @include flex-horizontal();
+        justify-content: space-between;
+        border-bottom: 1px solid $color-brown;
+        //border-image: linear-gradient(to left, transparent 2%, $color-brown) 1;
+        .header-left {
+          margin: 0 auto;
+          width: $header-left-width;
+          height: 100%;
+          //border: 1px solid green;
+          @include flex-vertical();
+          .site-title {
+            margin: 0 auto;
+            margin-left: 0;
+            @include text-font(36px, 400, auto, 0);
+            text-decoration: none;
+            color: $color-brown;
+            text-align: left;
+          }
+          .site-title:hover {
+            color: $color-red;
+          }
+        }
+        .header-center {
+          margin: 0 auto;
+          width: $header-center-width;
+          height: 100%;
+          //border: 1px solid green;
+          @include flex-vertical();
+          .menu-block {
+            margin: 0 auto;
+            width: 100%;  
+            @include flex-horizontal();
+            //justify-content: space-around;
+            .menu-item {
+              margin: 0;  
+              margin-right: 50px;
+              @include text-font(28px, 400, auto, 0);
+              text-decoration: none;
+              color: $color-grey-dark;
+              text-align: center;
+            }
+            .last {
+              margin-right: 0;
+            }
+            .menu-item:hover {
+              color: $color-red;
+            }
+          }
+        }
+        .header-right {
+          margin: 0 auto;
+          width: $header-right-width;
+          height: 100%;
+          //border: 1px solid green;
+          @include flex-vertical();
+          .service-block {
+            margin: 0 auto;
+            width: 100%;              
+            @include flex-horizontal();
+            justify-content: flex-end;            
+            .service-item {
+              margin: 0;
+              margin-right: 30px;
+              width: 36px;
+              height: 36px;
+              //border: 1px solid blue;
+            }
+            .last {
+              margin-right: 0;
+            }
+            .service-item:hover {
+              svg path {
+                fill: $color-red;
+              }
+            }
+          }
+        }
+      }
+    }
+    main {
+      margin: 0;
+      width: $site-width;
+      min-height: $min-main-height - $footer-height;
+      @include flex-vertical();
+      //border: 1px solid green;
+      .top-block {
+        margin: 0 auto;
+        width: $block-width;
+        min-height: 0.5*($min-main-height + $footer-height);
+        @include flex-horizontal();
+        justify-content: space-between;
+        //border: 1px solid green;
+        .top-left-box {
+          margin: 0 auto;
+          height: 0.5*($min-main-height + $footer-height);  // 100%;
+          width: 50%;
+          @include flex-vertical();
+          //border: 1px solid violet;
+          .about-img {
+            height: 90%;
+            width: auto;
+            object-fit: contain;  // cover; // contain;
+          }
+        }
+        .top-right-box {
+          margin: 0 auto;
+          height: 100%;
+          width: 50%;
+          @include flex-vertical();
+          justify-content: flex-start;
+          //border: 1px solid orangered;
+          .about-title {
+            padding: 10px;  // 0 10px 0 10px;
+            @include text-font(24px, 400, auto, 0);
+            color: $color-brown;
+            text-align: left;
+            white-space: pre-line;
+          }
+          .about-text {
+            padding: 10px;
+            @include text-font(16px, 300, auto, 0);
+            color: $color-grey-dark;
+            text-align: left;
+            white-space: pre-line;
+          }
+        }
+      }
+      .bottom-block {
+        margin: 0 auto;
+        width: $block-width;
+        min-height: 0.5*($min-main-height + $footer-height);
+        //border: 1px solid green;
+        @include flex-horizontal();
+        justify-content: space-between;
+        .bottom-left-box {
+          margin: 0 auto;
+          height: 100%;
+          width: 50%;
+          @include flex-vertical();
+          justify-content: flex-start;
+          //border: 1px solid orangered;
+          .about-title {
+            padding: 10px;
+            @include text-font(24px, 400, auto, 0);
+            color: $color-brown;
+            text-align: left;
+            white-space: pre-line;
+          }
+          .about-text {
+            padding: 10px;
+            @include text-font(16px, 300, auto, 0);
+            color: $color-grey-dark;
+            text-align: left;
+            white-space: pre-line;
+          }
+        }
+        .bottom-right-box {
+          margin: 0 auto;
+          height: 0.5*($min-main-height + $footer-height);  // 100%;
+          width: 50%;
+          @include flex-vertical();
+          //border: 1px solid violet;
+          .about-img {
+            height: 90%;
+            width: auto;
+            object-fit: contain;  // cover;  // contain;
+          }
+        }
+      }
+
+    }
+  }
+  footer {
+    margin: 0;
+    width: $footer-width;
+    height: $footer-height;
+    @include flex-vertical();
+    background-color: $color-back-2;
+    position: relative;
+    .btn-up-block {
+      position: absolute;
+      top: -100%; 
+      left: 93vw; 
+      z-index: 9999;
+    }
+    .btn-up-block:hover {
+      svg path {
+        fill: $color-grey-light;
+      }
+    }
+    .footer-block {
+      margin: 0 auto;
+      width: $block-width;
+      height: $footer-height;
+      //background-color: orange;
+      @include flex-horizontal();
+      justify-content: space-between;
+      .footer-left {
+        margin: 0 auto;
+        width: $footer-left-width;
+        height: 100%;
+        //border: 1px solid green;
+        @include flex-vertical();
+        .footer-left-block {
+          height: 70%;
+          @include flex-vertical();
+          justify-content: space-between;
+          .title-block {
+            margin: 0 auto;
+            width: 100%;
+            height: auto;
+            @include flex-horizontal();
+            justify-content: flex-start;
+            .send-title {
+              @include text-font(20px, 400, auto, 0);
+              color: $color-grey-dark;
+              text-align: left;
+            }
+            .copyrights {
+              @include text-font(14px, 400, auto, 0);
+              color: $color-grey-dark;
+              text-align: left;
+            }
+          }          
+        }
+      }
+      .footer-center {
+        margin: 0 auto;
+        width: $footer-center-width;
+        height: 100%;
+        //border: 1px solid green;
+        @include flex-vertical();
+        .footer-center-block {
+          height: 70%;
+          @include flex-horizontal();
+          .message-footer {
+            width: 80%;
+            height: 70%;
+            border: 1px solid $color-back-1;
+            //border-radius: 5px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            outline: none;
+            resize: vertical;
+            min-height: 70%;
+            max-height: 100%;
+            overflow-y: auto;
+          }
+          .message-footer::placeholder {
+            padding: 10px 0 0 10px;
+            @include text-font(14px, 300, auto, 0);
+            color: $color-grey-light;
+          }
+          .btn-send-footer {
+            width: 20%;
+            height: 70%;
+            background-color: $color-back-3;
+            border: 1px solid $color-back-3;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            outline: none;
+            @include text-font(18px, 400, auto,0);
+            color: $color-grey-dark;
+            cursor: pointer;
+          }
+          .btn-send-footer:hover {
+            background-color: $color-back-4;
+            border: 1px solid $color-back-4;
+            color: $color-back-1;
+          }
+        }
+      }
+      .footer-right {
+        margin: 0 auto;
+        width: $footer-right-width;
+        height: 100%;
+        //border: 1px solid green;
+        @include flex-vertical();
+        .footer-right-block {
+          margin: 0 auto;
+          width: 100%;
+          height: 70%;  
+          @include flex-horizontal();
+          justify-content: space-around;  
+          .socials-block {
+            margin: 0 auto;
+            width: 70%; 
+            @include flex-horizontal();
+            justify-content: flex-end;  
+            .social-icon {
+              width: 36px;
+              height: 36px;
+            }
+            .social-icon:hover {
+              svg path {
+                fill: $color-red;
+              }
+            }
+          }
+          .signature-block {
+            margin: 0 auto;
+            width: 30%; 
+            height: 100%;
+            @include flex-horizontal();
+            justify-content: flex-end;
+            .signature {
+              width: auto;  
+              height: 100%; 
+              object-fit: contain;
+              @include flex-horizontal();
+              justify-content: left;
+            }
+          }
+        }
+      }
+    }
+  }
+}
